@@ -2,13 +2,6 @@
 TODO
 ====
 
-+ application icon
-- spec
-- .desktop
-- localization
-+ default suffix
-
-------------------------------------------------------------------------
 Common:
 - Nice icons
 - Service menu for KDE
@@ -21,6 +14,7 @@ Backend:
 Interface:
 - Horizontal or vertical orientation of panes
 - Show current OCR settings in status bar
+- Localization
 
 Image:
 - Get image from scanner

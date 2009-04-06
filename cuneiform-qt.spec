@@ -8,9 +8,9 @@ License:	GPL
 Group:		Graphics
 URL:		http://www.altlinux.org/Cuneiform-Qt
 
-Packager:   Andrey Cherepanov <cas@altlinux.org>
+Packager:   	Andrey Cherepanov <cas@altlinux.org>
 
-Source0:	%name-%version.tar.gz
+Source0:	%name-%version.tar.bz2
 
 BuildRequires: gcc-c++ libqt4-devel
 Requires: cuneiform
@@ -31,18 +31,16 @@ lrelease-qt4 %name.pro
 
 %install
 %makeinstall
-mkdir -p %buildroot%_datadir/apps/%name
-install -m 0644 *.qm %buildroot%_datadir/apps/%name/
-install -m 0644 %name.desktop %buildroot%_datadir/applications/%name.desktop
-install -m 0644 images/%name.png %buildroot%_datadir/icons/hicolor/32x32/%name.png
-
+#install -D -m 0644 *.qm %buildroot%_datadir/apps/%name/
+install -D -m 0644 %name.desktop %buildroot%_datadir/applications/%name.desktop
+install -D -m 0644 icons/%name.png %buildroot%_datadir/pixmaps/%name.png
 
 %files
 %doc AUTHORS README TODO
 %_bindir/%name
-%_datadir/apps/%name/
+#%_datadir/apps/%name/
 %_datadir/applications/%name.desktop
-%_datadir/icons/hicolor/32x32/%name.png
+%_datadir/pixmaps/%name.png
 
 %changelog
 * Mon Apr 06 2009 Andrey Cherepanov <cas@altlinux.org> 0.1.0-alt1
