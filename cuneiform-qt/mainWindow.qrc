@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="small" >
+    <file>icons/cuneiform-qt.png</file>
+    <file>icons/small-open.png</file>
+    <file>icons/small-save.png</file>
+    <file>icons/small-recognize.png</file>
+  </qresource>
+</RCC>

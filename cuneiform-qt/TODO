@@ -1,0 +1,41 @@
+
+TODO
+====
+
++ application icon
+- spec
+- .desktop
+- localization
++ default suffix
+
+------------------------------------------------------------------------
+Common:
+- Nice icons
+- Service menu for KDE
+
+Backend:
+- Deep integration with Cuneiform libraries for mark fuzzy results 
+  and progress indication
+- Get supported languages and formats from backend
+
+Interface:
+- Horizontal or vertical orientation of panes
+- Show current OCR settings in status bar
+
+Image:
+- Get image from scanner
+- Support for dropped files
+- Support remote files
+- Support for show and recognize multipage TIFF
+- Set hue, saturation and value for image, crop borders
+- Zoom and dragging source image
+
+Result:
+- Edit result text
+- Open text in OpenOffice.org
+- Print text
+- Check spelling
+- Support remote files
+- Discern formats representation
+- Cut/Copy/Paste/Select all in context menu and main menu
+- Confirmation in exit with unsaved data

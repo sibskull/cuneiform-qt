@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Cuneiform-Qt
+GenericName=Cuneiform OCR
+GenericName[ru]=Распознавание текстов
+Exec=cuneiform-qt %u
+Comment=Cuneiform OCR
+Comment[ru]=Распознавание текстов
+MimeType=image/png;image/jpeg;image/tiff;image/bmp;
+Type=Application
+Icon=cuneiform-qt.png
+ServiceTypes=
+Categories=Office;
