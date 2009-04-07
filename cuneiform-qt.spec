@@ -1,7 +1,7 @@
 
 Name:		cuneiform-qt
 Version:	0.1.1
-Release:	alt1
+Release:	alt0.M41.1
 Summary:	GUI frontend for Cuneiform OCR
 
 License:	GPL
@@ -39,6 +39,9 @@ make install INSTALL_ROOT=%buildroot
 %_pixmapsdir/%name.png
 
 %changelog
+* Tue Apr 07 2009 Andrey Cherepanov <cas@altlinux.org> 0.1.1-alt0.M41.1
+- Build for 4.1 branch
+
 * Tue Apr 07 2009 Andrey Cherepanov <cas@altlinux.org> 0.1.1-alt1
 - Add Russian translation
 - Save from text widget instead copy temporary file
