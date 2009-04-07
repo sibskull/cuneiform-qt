@@ -46,11 +46,14 @@ int Backend::onStart() {
 	args << "-o" << config->getOutputFile();
 	args << config->getInputFile();
 	
+	//qDebug() << qPrintable( command ) << qPrintable( args.join( " " ) );
+
+	// Clear errors
+	errors.clear();
+	error.clear();
+
 	// Start process
 	start( command, args );
-	
-	//qDebug() << "START!";
-	//qDebug() << qPrintable( command ) << qPrintable( args.join( " " ) );
 	
 	return waitForStarted();
 }

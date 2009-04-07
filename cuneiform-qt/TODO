@@ -14,15 +14,15 @@ Backend:
 Interface:
 - Horizontal or vertical orientation of panes
 - Show current OCR settings in status bar
-- Localization
 
 Image:
 - Get image from scanner
 - Support for dropped files
 - Support remote files
 - Support for show and recognize multipage TIFF
-- Set hue, saturation and value for image, crop borders
-- Zoom and dragging source image
+- Set hue, saturation and value for image
+- Crop borders and select region for recognition
+- Zoom source image
 
 Result:
 - Edit result text
@@ -30,6 +30,5 @@ Result:
 - Print text
 - Check spelling
 - Support remote files
-- Discern formats representation
-- Cut/Copy/Paste/Select all in context menu and main menu
+- Cut/Copy/Paste/Select all in main menu
 - Confirmation in exit with unsaved data

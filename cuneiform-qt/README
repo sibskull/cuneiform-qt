@@ -5,7 +5,7 @@ Cuneiform-Qt
 
 Graphical interface for Cuneiform OCR
 
-Version 0.1.0
+Version 0.1.1
 
 =============================================
 
@@ -24,7 +24,7 @@ All planned feature is in TODO file.
 
 REQUIRES
 --------
-- Qt 4.x (http://www.trolltech.com)
+- Qt >= 4.3 (http://www.trolltech.com)
 - cuneiform (https://launchpad.net/cuneiform-linux)
 
 

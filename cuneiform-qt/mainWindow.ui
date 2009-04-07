@@ -69,6 +69,9 @@
            <property name="whatsThis" >
             <string>Result text</string>
            </property>
+           <property name="readOnly" >
+            <bool>true</bool>
+           </property>
            <property name="html" >
             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 &lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">

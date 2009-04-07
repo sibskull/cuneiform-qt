@@ -109,7 +109,10 @@ Settings::Settings( QWidget *parent )
 	fmt->addItem( tr("HTML"), "html" );
 	/* TODO other format currently is not supported */
 	fmt->addItem( tr("hOCR HTML"), "hocr" );
-	fmt->addItem( tr("Cuneiform 2000 format"), "native" );
+
+	// Remove native option because it is binary format and it will not display correctly
+	//fmt->addItem( tr("Cuneiform 2000 format"), "native" );
+
 	fmt->addItem( tr("RTF"), "rtf" );
 	fmt->addItem( tr("Plain text with TeX paragraphs"), "smarttext" );
 	fmt->addItem( tr("Plain text"), "text" );

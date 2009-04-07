@@ -65,14 +65,14 @@ MainWindow::MainWindow( QStringList *names )
 	// Save result text
 	connect( form->actionSave, SIGNAL(activated(int)), this, SLOT(SaveText()) ); 
 	// Exit. TODO confirm exit without saving recognized text
-	connect( form->actionExit, SIGNAL(activated(int)), this, SLOT(close()) ); 
+	connect( form->actionExit, SIGNAL(activated(int)), this, SLOT(onWindowClose()) ); 
 
 	// Open configuration dialog
 	connect( form->actionConfigure, SIGNAL(activated(int)), config, SLOT(exec()) ); 
     connect( config, SIGNAL(accepted()), this, SLOT(onSettingsSave()) );
     connect( config, SIGNAL(rejected()), this, SLOT(onSettingsCancel()) );
 
-	// About
+	// About dialog
 	connect( form->actionAbout, SIGNAL(activated(int)), this, SLOT(About()) );
 	
 	// On window close
@@ -85,6 +85,9 @@ MainWindow::MainWindow( QStringList *names )
 	progressDialog->setText( tr("Recognition is in progress.\nPlease, wait...") );
 	progressDialog->addButton( QMessageBox::Cancel );
 	connect( progressDialog, SIGNAL(rejected()), this, SLOT(onProcessStop()) );
+
+	// Set render text action disabled
+	form->actionRecognizeText->setDisabled( true );
 
 	// Render specified image file
 	if( ! sourceImageFile.isEmpty() ) {
@@ -110,10 +113,7 @@ void MainWindow::onWindowClose() {
         process->waitForFinished(3000);
     }	
 
-	// Delete temp file
-	QFile f( resultFile );
-	//qDebug() << "remove" << qPrintable( resultFile );
-	f.remove();
+	close();
 	
 }
 
@@ -123,7 +123,7 @@ void MainWindow::OpenImage() {
 	// Open standart open dialog
 	QFileDialog dialog( this );
 
-	dialog.setNameFilter( tr("Images (*.png *.jpg *.bmp *.tif *.tiff)") + QString( ";;" ) + tr("All files (*)") );
+	dialog.setNameFilter( tr("Images (*.png *.jpg *.jpeg *.bmp *.tif *.tiff)") + QString( ";;" ) + tr("All files (*)") );
 	dialog.setWindowTitle( tr("Open image") );
 	dialog.setAcceptMode( QFileDialog::AcceptOpen );
 	
@@ -146,7 +146,6 @@ void MainWindow::OpenImage() {
 // Recognize text from current opened image
 void MainWindow::RecognizeText() {
 	// Run recognition process
-	form->statusBar->showMessage( tr("Image is processed...") );
 	emit onProcessStart();
 }
 
@@ -156,22 +155,48 @@ void MainWindow::SaveText() {
 	int save = true;
 	int ret;
 
+	form->statusBar->showMessage( tr("Saving result file...") );
+
 	// Open standart save dialog
 	QString savedFile( "" );
 	QFileDialog dialog( this );
 	
-	dialog.setNameFilter( tr("HTML documents (*.htm *.html)") + QString( ";;" ) + tr("All files (*)") );
-	dialog.setDefaultSuffix( QString( "html" ) ); // TODO: different extensions for different formats
+	// Different extensions for different formats
+	QString defExt;
+	QString defFilter;
+	
+	if( config->getFormat() == QString( "html" ) || config->getFormat() == QString( "hocr" ) ) {
+		defFilter = tr("HTML documents (*.htm *.html)");
+		defExt = QString( "html" );
+	} else {
+		if( config->getFormat() == QString( "rtf" ) ) {
+			defFilter = tr("RTF documents (*.rtf)");
+			defExt = QString( "rtf" );
+		} else {
+			defFilter = tr("Text files (*.txt)");
+			defExt = QString( "txt" );
+		}
+	}
+
+	dialog.setNameFilter( defFilter + QString( ";;" ) + tr("All files (*)") );
+	dialog.setDefaultSuffix( defExt );
 	dialog.setWindowTitle( tr("Save result") );
 	dialog.setAcceptMode( QFileDialog::AcceptSave );
+	dialog.setConfirmOverwrite( false );
 	
 	QStringList fileNames;
-	if (dialog.exec())
+	if ( dialog.exec() )
 		fileNames = dialog.selectedFiles();
 	
 	if( fileNames.count() > 0 ) {
 		savedFile = fileNames.at( 0 );
-		//QMessageBox::information( this, tr("Saved file), sourceImageFile, QMessageBox::Ok );
+	}
+	
+	//qDebug() << qPrintable( tr("Saved file: %1 (%2)").arg( savedFile ).arg( savedFile.isEmpty() ) );
+	
+	if( savedFile.isEmpty() ) {
+		form->statusBar->showMessage( QString( "" ) );
+		return;
 	}
 	
 	// Check for existance anf confirm overwrite if needed
@@ -179,7 +204,7 @@ void MainWindow::SaveText() {
 	if( f.exists() ) {
 		ret = QMessageBox::question( this, tr("Overwrite file?"),
 							  tr("File with name '%1' is exist.\n"
-							  "Do you really overwrite this file?").arg( savedFile ), 
+							  "Do you really overwrite this file?").arg( f.fileName() ), 
 							  QMessageBox::Yes | QMessageBox::No );
 		if( ret != QMessageBox::Yes ) 
 			save = false;
@@ -187,32 +212,48 @@ void MainWindow::SaveText() {
 			f.remove();
 	}
 	
-	// Really copy from temp file to specified by user
+	// Really save to specified file
 	if( ret ) {
-		QFile s( resultFile );
-		s.copy( savedFile );
+		f.open( QFile::WriteOnly | QFile::Truncate );
+		
+		// Check for open error
+		if( f.error() ) {
+			QMessageBox::critical( this, tr("Error open"),
+							  tr("Unable to open file '%1' for save.").arg( f.fileName() ), 
+							  QMessageBox::Ok );
+			form->statusBar->showMessage( tr("Unable to open file '%1' for save.").arg( f.fileName() ) );
+			return;
+		}
+		
+		// Get content from the result field
+		QString content;
+		if( config->getFormat() == QString( "html" ) || config->getFormat() == QString( "hocr" ) ) {
+			content = form->result->toHtml();
+		} else {
+			content = form->result->toPlainText();
+		}
+		
+		// Write to file
+		QTextStream stream( &f );
+		
+		// Set UTF-8 codec for write stream
+		stream.setCodec( QTextCodec::codecForName( "UTF-8" ) );
+		
+		stream << content;
+	
+		// Check for write error
+		if( f.error() ) {
+			QMessageBox::critical( this, tr("Error save"),
+							  tr("Unable to save file '%1'.").arg( f.fileName() ), 
+							  QMessageBox::Ok );
+			form->statusBar->showMessage( tr("Unable to save file '%1'.").arg( f.fileName() ) );
+			return;
+		}
+		f.close();
 	}
 
-}
+	form->statusBar->showMessage( tr("File '%1' is saved successful.").arg( f.fileName() ) );
 
-// Show dialog about application
-// TODO set big application icon
-// TODO show cuneiform version
-void MainWindow::About() {
-	QMessageBox::information( this, tr("About Cuneiform-Qt"),
-							  tr("<b>Cuneiform-Qt:</b><br />"
-							  "   Graphical interface for Cuneiform OCR system.<br />"
-							  "   Version: %1<br />"
-							  "   Copyright &copy; Andrey Cherepanov <cas@altlinux.org>, 2009<br />"
-							  "   Web-site: <a href='%2'>%2</a><br />"
-							  "<br />"
-							  "<b>Cuneiform:</b><br />"
-							  "   Copyright &copy; Cognitive technologies<br />"
-							  "   Web-site: <a href='https://launchpad.net/cuneiform-linux'>https://launchpad.net/cuneiform-linux</a><br />"
-							  ).arg( 
-								QApplication::applicationVersion() ).arg(  // Application version
-								QApplication::organizationDomain() ), // Application site
-                              QMessageBox::Ok );
 }
 
 // Render specified image
@@ -226,6 +267,7 @@ void MainWindow::renderImage() {
 	// Load image
 	form->statusBar->showMessage( tr("Loading image '%1'...").arg( sourceImageFile) );
 	if( ! img.load( sourceImageFile ) ) {
+		form->statusBar->showMessage( tr("Unable to open file '%1'.").arg( sourceImageFile) );
 		QMessageBox::warning( this, tr("Error open file"),
 							  tr("Unable to open file '%1'.").arg( sourceImageFile ),
 							  QMessageBox::Ok );
@@ -240,18 +282,33 @@ void MainWindow::renderImage() {
 	form->source->show();
 
 	form->statusBar->showMessage( tr("Image '%1' is loaded.").arg( sourceImageFile ) );
+
+	// Set render text action enabled
+	form->actionRecognizeText->setDisabled( false );
+
 	config->setInputFile( sourceImageFile );
 
 }
 
 // On process start
 void MainWindow::onProcessStart() {
+
+	if( sourceImageFile.isEmpty() ) {
+		QMessageBox::warning( this, tr("Image is not loaded"),
+							  tr("Image is not loaded. Please, load scanned image."),
+							  QMessageBox::Ok );
+		return;
+	}
+
+	form->statusBar->showMessage( tr("Recognition is processing...") );
 	if( ! process->onStart() ) {
 		QMessageBox::critical( this, tr("Error start"), 
 			tr("Could not start Cuneiform executables. Check your installation.") );
 	}
+
 	form->result->clear();
 	progressDialog->exec();
+	
 }
 
 // On process finish
@@ -280,12 +337,17 @@ void MainWindow::onProcessFinish() {
 		QFile f( resultFile );
 		f.open( QIODevice::ReadOnly );
 		QTextStream stream( &f );
+		
+		// Set UTF-8 codec for read stream
+		stream.setCodec( QTextCodec::codecForName( "UTF-8" ) );
+		
 		QString content = stream.readAll();
 		f.close();
-		if( config->getFormat() == QString( "html" ) ) {
+		f.remove();
+		if( config->getFormat() == QString( "html" ) || config->getFormat() == QString( "hocr" ) ) {
 			form->result->setHtml( content );
 		} else {
-			form->result->setText( content );
+			form->result->setPlainText( content );
 		}
 	}
 	progressDialog->hide();
@@ -320,3 +382,31 @@ void MainWindow::onSettingsCancel() {
 	config->load();
 }
 
+// Show dialog about application
+// TODO set big application icon
+// TODO show cuneiform version
+void MainWindow::About() {
+
+	QMessageBox aboutDialog( this );
+
+	aboutDialog.setIconPixmap( QPixmap(QString::fromUtf8(":/small/icons/cuneiform-qt.png")) );
+	aboutDialog.setWindowTitle( tr("About Cuneiform-Qt") );
+	aboutDialog.setText( 							  
+						 tr("<b>Cuneiform-Qt:</b><br />"
+						 "   Graphical interface for Cuneiform OCR system.<br />"
+						 "   Version: %1<br />"
+						 "   Copyright &copy; Andrey Cherepanov <cas@altlinux.org>, 2009<br />"
+						 "   Web-site: <a href='%2'>%2</a><br />"
+						 "<br />"
+						 "<b>Cuneiform:</b><br />"
+						 "   Copyright &copy; Cognitive technologies<br />"
+						 "   Web-site: <a href='https://launchpad.net/cuneiform-linux'>https://launchpad.net/cuneiform-linux</a><br />"
+						 ).arg( 
+						 QApplication::applicationVersion() ).arg(  // Application version
+						 QApplication::organizationDomain() ) // Application site
+						);
+	aboutDialog.setStandardButtons( QMessageBox::Ok );
+	aboutDialog.setDefaultButton( QMessageBox::Ok );
+
+	aboutDialog.exec();
+}

@@ -1,6 +1,6 @@
 
 Name:		cuneiform-qt
-Version:	0.1.0
+Version:	0.1.1
 Release:	alt1
 Summary:	GUI frontend for Cuneiform OCR
 
@@ -12,7 +12,7 @@ Packager:   	Andrey Cherepanov <cas@altlinux.org>
 
 Source0:	%name-%version.tar.bz2
 
-BuildRequires: gcc-c++ libqt4-devel
+BuildRequires: gcc-c++ libqt4-devel >= 4.3.0
 Requires: cuneiform
 
 %description
@@ -26,23 +26,30 @@ Cuneiform and save result in HTML file.
 DESTDIR=%buildroot PREFIX=/usr qmake-qt4 %name.pro
 
 %build
-lrelease-qt4 %name.pro
 %make_build
 
 %install
-%makeinstall
-#install -D -m 0644 *.qm %buildroot%_datadir/apps/%name/
-install -D -m 0644 %name.desktop %buildroot%_datadir/applications/%name.desktop
-install -D -m 0644 icons/%name.png %buildroot%_datadir/pixmaps/%name.png
+make install INSTALL_ROOT=%buildroot
 
 %files
 %doc AUTHORS README TODO
 %_bindir/%name
-#%_datadir/apps/%name/
-%_datadir/applications/%name.desktop
-%_datadir/pixmaps/%name.png
+%_datadir/apps/%name/*.qm
+%_desktopdir/%name.desktop
+%_pixmapsdir/%name.png
 
 %changelog
+* Tue Apr 07 2009 Andrey Cherepanov <cas@altlinux.org> 0.1.1-alt1
+- Add Russian translation
+- Save from text widget instead copy temporary file
+- Remove temporary file
+- Check for errors during saving
+- Differ saved format and filter in saved file selection dialog
+- Show application icon in about dialog
+- Remove native option because it is binary format and it will not display correctly
+- Fix readOnly flag for result text
+- Move installation instruction from spec to QMake project file
+
 * Mon Apr 06 2009 Andrey Cherepanov <cas@altlinux.org> 0.1.0-alt1
 - Initial release
 

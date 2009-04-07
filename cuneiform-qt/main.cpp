@@ -25,18 +25,17 @@ int main( int argc, char *argv[] ) {
 
 	Q_INIT_RESOURCE( mainWindow );
 	
-	
 	// Application instance
 	QApplication app( argc, argv );
-	
+
 	// Set application details
 	app.setApplicationName( "cuneiform-qt" );
-	app.setApplicationVersion( "0.1.0" );
+	app.setApplicationVersion( "0.1.1" );
 	app.setOrganizationDomain( "http://www.altlinux.org/Cuneiform-Qt" );
 
 	// Load localization
 	QTranslator translator;
-	QString locale = QLocale::system().name();
+	QString locale = QLocale::system().name().left( 2 );
 	translator.load( QString( DATADIR ) + app.applicationName() + QString ( "_" ) + locale );
     app.installTranslator( &translator );
 	 

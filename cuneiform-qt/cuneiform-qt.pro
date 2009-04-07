@@ -1,3 +1,9 @@
+######################################################################
+# Common settings
+
+TEMPLATE = app
+TARGET = cuneiform-qt
+VERSION = 0.1.1
 
 SOURCES += backend.cpp \
 		   main.cpp \
@@ -8,15 +14,10 @@ HEADERS += backend.h \
 		   mainWindow.h \
 		   settings.h
 
-TEMPLATE = app
-
-TRANSLATIONS = cuneiform-qt_ru.ts
-
-CONFIG -= debug
+CONFIG += debug
 
 CONFIG += release \
 		  exceptions \
-		  build_all \
 		  qt \
 		  warn_on
 
@@ -25,28 +26,26 @@ RESOURCES = mainWindow.qrc
 FORMS += mainWindow.ui \
 		 settings.ui
 
-TARGET = cuneiform-qt
-
-DESTDIR = $$(DESTDIR)
 PREFIX = $$(PREFIX)
 
 isEmpty( PREFIX ) {
 PREFIX = /usr/local
 }
 
-DATADIR = $$DESTDIR/$$PREFIX/share/apps/cuneiform-qt/
+DATADIR = $$PREFIX/share/apps/cuneiform-qt/
+TRANSLATIONS_DIR = $$DATADIR
+isEmpty(NO_TRANSLATIONS):include("translations/translations.pri")
 
 DEFINES += DATADIR=\\\"$$PREFIX/share/apps/cuneiform-qt/\\\"
 
-target.path = $$DESTDIR/$$PREFIX/bin/
+target.path = $$PREFIX/bin/
 
-translations.files = *.qm
-translations.path = $$DATADIR
+icon.files = icons/cuneiform-qt.png
+icon.path = $$PREFIX/share/pixmaps/
 
-icons.files = images/cuneiform-qt.png
-icons.path = $$DATADIR
+desktop.files = cuneiform-qt.desktop
+desktop.path = $$PREFIX/share/applications/
 
-INSTALLS += target
-INSTALLS += translations 
-INSTALLS += icons
-
+INSTALLS += target \
+			icon \
+			desktop
