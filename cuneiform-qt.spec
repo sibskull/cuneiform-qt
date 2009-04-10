@@ -1,18 +1,18 @@
-
 Name:		cuneiform-qt
 Version:	0.1.1
-Release:	alt1
+Release:	alt1.2
 Summary:	GUI frontend for Cuneiform OCR
 
-License:	GPL
+License:	GPLv3+
 Group:		Graphics
 URL:		http://www.altlinux.org/Cuneiform-Qt
 
-Packager:   	Andrey Cherepanov <cas@altlinux.org>
+Packager:	Andrey Cherepanov <cas@altlinux.org>
 
 Source0:	%name-%version.tar.bz2
 
-BuildRequires: gcc-c++ libqt4-devel >= 4.3.0
+BuildRequires: ImageMagick gcc-c++ libqt4-devel >= 4.3.0
+
 Requires: cuneiform
 
 %description
@@ -23,7 +23,7 @@ Cuneiform and save result in HTML file.
 
 %prep
 %setup -q
-DESTDIR=%buildroot PREFIX=/usr qmake-qt4 %name.pro
+PREFIX=%prefix qmake-qt4 "QMAKE_CFLAGS+=%optflags" "QMAKE_CXXFLAGS+=%optflags" %name.pro
 
 %build
 %make_build
@@ -31,14 +31,31 @@ DESTDIR=%buildroot PREFIX=/usr qmake-qt4 %name.pro
 %install
 make install INSTALL_ROOT=%buildroot
 
+# Icons
+%__mkdir -p %buildroot/{%_miconsdir,%_niconsdir,%_liconsdir}
+convert -resize 48x48 icons/%name.png %buildroot%_liconsdir/%name.png
+convert -resize 32x32 icons/%name.png %buildroot%_niconsdir/%name.png
+convert -resize 16x16 icons/%name.png %buildroot%_miconsdir/%name.png
+
 %files
 %doc AUTHORS README TODO
 %_bindir/%name
 %_datadir/apps/%name/*.qm
 %_desktopdir/%name.desktop
-%_pixmapsdir/%name.png
+%_miconsdir/%name.png
+%_niconsdir/%name.png
+%_liconsdir/%name.png
 
 %changelog
+* Fri Apr 10 2009 Motsyo Gennadi <drool@altlinux.ru> 0.1.1-alt1.2
+- created Ukrainian translation
+- add Ukrainian to desktop-file
+
+* Wed Apr 08 2009 Motsyo Gennadi <drool@altlinux.ru> 0.1.1-alt1.1
+- fix optflags
+- change icons from pixmapsdir to iconsdir
+- cleanup spec
+
 * Tue Apr 07 2009 Andrey Cherepanov <cas@altlinux.org> 0.1.1-alt1
 - Add Russian translation
 - Save from text widget instead copy temporary file
@@ -52,4 +69,3 @@ make install INSTALL_ROOT=%buildroot
 
 * Mon Apr 06 2009 Andrey Cherepanov <cas@altlinux.org> 0.1.0-alt1
 - Initial release
-
