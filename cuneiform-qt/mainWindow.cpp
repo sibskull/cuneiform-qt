@@ -402,7 +402,7 @@ void MainWindow::About() {
 						 "   Copyright &copy; Cognitive technologies<br />"
 						 "   Web-site: <a href='https://launchpad.net/cuneiform-linux'>https://launchpad.net/cuneiform-linux</a><br />"
 						 ).arg( 
-						 QApplication::applicationVersion() ).arg(  // Application version
+						 QString( VERSION ) ).arg(  // Application version
 						 QApplication::organizationDomain() ) // Application site
 						);
 	aboutDialog.setStandardButtons( QMessageBox::Ok );
