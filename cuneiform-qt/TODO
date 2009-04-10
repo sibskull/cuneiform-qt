@@ -5,6 +5,8 @@ TODO
 Common:
 - Nice icons
 - Service menu for KDE
+- Batch mode
+- Integration with ScanTailor (http://scantailor.sourceforge.net/)
 
 Backend:
 - Deep integration with Cuneiform libraries for mark fuzzy results 
@@ -23,6 +25,7 @@ Image:
 - Set hue, saturation and value for image
 - Crop borders and select region for recognition
 - Zoom source image
+- Support load and recognize PDF documents
 
 Result:
 - Edit result text

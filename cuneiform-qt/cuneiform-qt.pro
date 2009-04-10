@@ -36,7 +36,8 @@ DATADIR = $$PREFIX/share/apps/cuneiform-qt/
 TRANSLATIONS_DIR = $$DATADIR
 isEmpty(NO_TRANSLATIONS):include("translations/translations.pri")
 
-DEFINES += DATADIR=\\\"$$PREFIX/share/apps/cuneiform-qt/\\\"
+DEFINES += DATADIR=\\\"$$PREFIX/share/apps/cuneiform-qt/\\\" \
+           VERSION=\\\"$$VERSION\\\"
 
 target.path = $$PREFIX/bin/
 

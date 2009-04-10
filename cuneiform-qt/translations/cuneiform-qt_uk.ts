@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="ru">
+<!DOCTYPE TS><TS version="1.1" language="uk">
 <context>
     <name>MainWindow</name>
     <message>
@@ -11,102 +11,102 @@
         <location filename="../mainWindow.cpp" line="85"/>
         <source>Recognition is in progress.
 Please, wait...</source>
-        <translation>Идёт процесс распознавания.
-Подождите...</translation>
+        <translation>Йде процес розпізнавання.
+Зачекайте...</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="181"/>
         <source>All files (*)</source>
-        <translation>Все файлы (*)</translation>
+        <translation>Всі файли (*)</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="127"/>
         <source>Open image</source>
-        <translation>Открыть изображение</translation>
+        <translation>Відкрити зображення</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="169"/>
         <source>HTML documents (*.htm *.html)</source>
-        <translation>Документы HTML (*.htm *.html)</translation>
+        <translation>Документи HTML (*.htm *.html)</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="183"/>
         <source>Save result</source>
-        <translation>Сохранение результата</translation>
+        <translation>Зберегти результат</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="205"/>
         <source>Overwrite file?</source>
-        <translation>Файл существует</translation>
+        <translation>Замінити файл?</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="207"/>
         <source>File with name &apos;%1&apos; is exist.
 Do you really overwrite this file?</source>
-        <translation>Файл с именем «%1» уже существует.
-Заменить этот файл?</translation>
+        <translation>Файл з іменем «%1» вже існує.
+Замінити цей файл?</translation>
     </message>
     <message>
         <location filename="../mainWindow.ui" line="189"/>
         <source>About Cuneiform-Qt</source>
-        <translation>О Cuneiform-Qt</translation>
+        <translation>Про Cuneiform-Qt</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="404"/>
         <source>&lt;b&gt;Cuneiform-Qt:&lt;/b&gt;&lt;br /&gt;   Graphical interface for Cuneiform OCR system.&lt;br /&gt;   Version: %1&lt;br /&gt;   Copyright &amp;copy; Andrey Cherepanov &lt;cas@altlinux.org&gt;, 2009&lt;br /&gt;   Web-site: &lt;a href=&apos;%2&apos;&gt;%2&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;b&gt;Cuneiform:&lt;/b&gt;&lt;br /&gt;   Copyright &amp;copy; Cognitive technologies&lt;br /&gt;   Web-site: &lt;a href=&apos;https://launchpad.net/cuneiform-linux&apos;&gt;https://launchpad.net/cuneiform-linux&lt;/a&gt;&lt;br /&gt;</source>
-        <translation>&lt;b&gt;Cuneiform-Qt:&lt;/b&gt;&lt;br /&gt;   Графический интерфейс для системы распознавания Cuneiform.&lt;br /&gt;   Версия: %1&lt;br /&gt;   &amp;copy; Андрей Черепанов &lt;cas@altlinux.org&gt;, 2009&lt;br /&gt;   Веб-сайт: &lt;a href=&apos;%2&apos;&gt;%2&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;b&gt;Cuneiform:&lt;/b&gt;&lt;br /&gt;   &amp;copy; Cognitive technologies&lt;br /&gt;   Веб-сайт: &lt;a href=&apos;https://launchpad.net/cuneiform-linux&apos;&gt;https://launchpad.net/cuneiform-linux&lt;/a&gt;&lt;br /&gt;</translation>
+        <translation>&lt;b&gt;Cuneiform-Qt:&lt;/b&gt;&lt;br /&gt;   Графічний інтерфейс для системи розпізнавання символів Cuneiform.&lt;br /&gt;   Версія: %1&lt;br /&gt;   &amp;copy; Андрій Черепанов &lt;cas@altlinux.org&gt;, 2009&lt;br /&gt;   Веб-сайт: &lt;a href=&apos;%2&apos;&gt;%2&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;b&gt;Cuneiform:&lt;/b&gt;&lt;br /&gt;   &amp;copy; Cognitive technologies&lt;br /&gt;   Веб-сайт: &lt;a href=&apos;https://launchpad.net/cuneiform-linux&apos;&gt;https://launchpad.net/cuneiform-linux&lt;/a&gt;&lt;br /&gt;</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="268"/>
         <source>Loading image &apos;%1&apos;...</source>
-        <translation>Загрузка изображения «%1»...</translation>
+        <translation>Завантаження зображення «%1»...</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="271"/>
         <source>Error open file</source>
-        <translation>Ошибка открытия файла</translation>
+        <translation>Помилка відкриття файлу</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="272"/>
         <source>Unable to open file &apos;%1&apos;.</source>
-        <translation>Невозможно открыть файл «%1».</translation>
+        <translation>Неможливо відкрити файл «%1».</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="284"/>
         <source>Image &apos;%1&apos; is loaded.</source>
-        <translation>Загружено изображение «%1».</translation>
+        <translation>Завантажено зображення «%1».</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="305"/>
         <source>Error start</source>
-        <translation>Ошибка распознавания</translation>
+        <translation>Помилка розпізнавання</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="306"/>
         <source>Could not start Cuneiform executables. Check your installation.</source>
-        <translation>Невозможно запустить программу распознавания Cuneiform. Проверьте установку программы.</translation>
+        <translation>Неможливо запустити програму розпізнавання Cuneiform. Перевірте налаштування програми.</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="326"/>
         <source>Cuneiform error:
 %1</source>
-        <translation>Ошибка Cuneiform:
+        <translation>Помилка Cuneiform:
 %1</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="328"/>
         <source>Error recognition</source>
-        <translation>Ошибка распознавания</translation>
+        <translation>Помилка розпізнавання</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="354"/>
         <source>Recognition is complete.</source>
-        <translation>Распознавание текста закончено.</translation>
+        <translation>Розпізнавання тексту закінчено.</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="362"/>
         <source>Recognition is canceled by user.</source>
-        <translation>Процесс распознавания прерван пользователем.</translation>
+        <translation>Розпізнавання тексту перервано користувачем.</translation>
     </message>
     <message>
         <location filename="../mainWindow.ui" line="14"/>
@@ -116,22 +116,22 @@ Do you really overwrite this file?</source>
     <message>
         <location filename="../mainWindow.ui" line="42"/>
         <source>Source image</source>
-        <translation>Исходное изображение</translation>
+        <translation>Вхідне зображення</translation>
     </message>
     <message>
         <location filename="../mainWindow.ui" line="35"/>
         <source>Source Image</source>
-        <translation>Исходное изображение</translation>
+        <translation>Вихідне зображення</translation>
     </message>
     <message>
         <location filename="../mainWindow.ui" line="63"/>
         <source>Recognized text</source>
-        <translation>Распознанный текст</translation>
+        <translation>Розпізнаний текст</translation>
     </message>
     <message>
         <location filename="../mainWindow.ui" line="70"/>
         <source>Result text</source>
-        <translation>Распознанный текст</translation>
+        <translation>Розпізнаний текст</translation>
     </message>
     <message>
         <location filename="../mainWindow.ui" line="76"/>
@@ -153,12 +153,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainWindow.ui" line="113"/>
         <source>&amp;Help</source>
-        <translation>&amp;Справка</translation>
+        <translation>&amp;Довідка</translation>
     </message>
     <message>
         <location filename="../mainWindow.ui" line="119"/>
         <source>&amp;Settings</source>
-        <translation>&amp;Настройка</translation>
+        <translation>&amp;Налаштування</translation>
     </message>
     <message>
         <location filename="../mainWindow.ui" line="141"/>
@@ -168,87 +168,87 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainWindow.ui" line="170"/>
         <source>&amp;Open image...</source>
-        <translation>&amp;Открыть изображение...</translation>
+        <translation>&amp;Відкрити зображення...</translation>
     </message>
     <message>
         <location filename="../mainWindow.ui" line="179"/>
         <source>&amp;Save result...</source>
-        <translation>&amp;Сохранить результат...</translation>
+        <translation>&amp;Зберегти результат...</translation>
     </message>
     <message>
         <location filename="../mainWindow.ui" line="184"/>
         <source>&amp;Exit</source>
-        <translation>В&amp;ыход</translation>
+        <translation>В&amp;ихід</translation>
     </message>
     <message>
         <location filename="../mainWindow.ui" line="198"/>
         <source>&amp;Recognize text</source>
-        <translation>&amp;Распознать текст</translation>
+        <translation>&amp;Розпізнати текст</translation>
     </message>
     <message>
         <location filename="../mainWindow.ui" line="203"/>
         <source>&amp;Configure...</source>
-        <translation>&amp;Настроить программу...</translation>
+        <translation>&amp;Налаштування...</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="126"/>
         <source>Images (*.png *.jpg *.jpeg *.bmp *.tif *.tiff)</source>
-        <translation>Изображения (*.png *.jpg *.jpeg *.bmp *.tif *.tiff)</translation>
+        <translation>Зображення (*.png *.jpg *.jpeg *.bmp *.tif *.tiff)</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="158"/>
         <source>Saving result file...</source>
-        <translation>Запись файла...</translation>
+        <translation>Збереження файлу...</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="173"/>
         <source>RTF documents (*.rtf)</source>
-        <translation>Документы RTF (*.rtf)</translation>
+        <translation>Документи RTF (*.rtf)</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="176"/>
         <source>Text files (*.txt)</source>
-        <translation>Текстовые файлы (*.txt)</translation>
+        <translation>Текстові файли (*.txt)</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="221"/>
         <source>Error open</source>
-        <translation>Ошибка открытия</translation>
+        <translation>Помилка відкриття</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="224"/>
         <source>Unable to open file &apos;%1&apos; for save.</source>
-        <translation>Невозможно открыть файл «%1» на запись. Проверьте права доступа.</translation>
+        <translation>Неможливо відкрити файл «%1» на запис. Перевірте права доступу.</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="246"/>
         <source>Error save</source>
-        <translation>Ошибка сохранения</translation>
+        <translation>Помилка збереження</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="249"/>
         <source>Unable to save file &apos;%1&apos;.</source>
-        <translation>Невозможно сохранить файл «%1».</translation>
+        <translation>Неможливо зберегти файл «%1».</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="255"/>
         <source>File &apos;%1&apos; is saved successful.</source>
-        <translation>Файл «%1» сохранён.</translation>
+        <translation>Файл «%1» збережено.</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="303"/>
         <source>Recognition is processing...</source>
-        <translation>Идёт процесс распознавания...</translation>
+        <translation>Іде процес розпізнавання...</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="297"/>
         <source>Image is not loaded</source>
-        <translation>Изображение не загружено</translation>
+        <translation>Зображення не завантажено</translation>
     </message>
     <message>
         <location filename="../mainWindow.cpp" line="298"/>
         <source>Image is not loaded. Please, load scanned image.</source>
-        <translation>Изображение не загружено. Загрузите сканированное изображение.</translation>
+        <translation>Зображення не завантажено. Завантажте відскановане зображення.</translation>
     </message>
 </context>
 <context>
@@ -257,33 +257,33 @@ p, li { white-space: pre-wrap; }
         <location filename="../main.cpp" line="46"/>
         <source>%1 %2. Graphical interface for Cuneiform OCR system.</source>
         <comment>%1 is application name, %2 is application version</comment>
-        <translation>%1 %2. Графический интерфейс для системы оптического распознавания символов Cuneiform.</translation>
+        <translation>%1 %2. Графічний інтерфейс для системи розпізнавання символів Cuneiform.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="48"/>
         <source>Usage: %1 [option] [image]</source>
         <comment>%1 is application name</comment>
-        <translation>Использование: %1 [параметр] [изображение]</translation>
+        <translation>Використання: %1 [параметр] [зображення]</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="49"/>
         <source>Available options:</source>
-        <translation>Доступные параметры:</translation>
+        <translation>Доступні параметри::</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="50"/>
         <source>    -h         This help</source>
-        <translation>    -h         Справка по использованию программы</translation>
+        <translation>    -h         Довідка по використанню програми</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="51"/>
         <source>    --version  Version information</source>
-        <translation>    --version  Сведения о версии программы</translation>
+        <translation>    --version  Інформація про версію програми</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="52"/>
         <source>    image      Image file in format supported by ImageMagic</source>
-        <translation>    изображение      Файл изображения, формат которого поддерживается в ImageMagic</translation>
+        <translation>    зображення      Файл зображення, формат якого підтримується в ImageMagic</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="60"/>
@@ -297,122 +297,122 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../settings.cpp" line="73"/>
         <source>English</source>
-        <translation>Английский</translation>
+        <translation>Англійська</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="74"/>
         <source>German</source>
-        <translation>Немецкий</translation>
+        <translation>Німецька</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="75"/>
         <source>French</source>
-        <translation>Французский</translation>
+        <translation>Французька</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="76"/>
         <source>Russian</source>
-        <translation>Русский</translation>
+        <translation>Російська</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="77"/>
         <source>Swedish</source>
-        <translation>Шведский</translation>
+        <translation>Шведська</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="78"/>
         <source>Spanish</source>
-        <translation>Испанский</translation>
+        <translation>Іспанська</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="79"/>
         <source>Italian</source>
-        <translation>Итальянский</translation>
+        <translation>Італійська</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="80"/>
         <source>Russian+English</source>
-        <translation>Русский и английский</translation>
+        <translation>Російська + англійська</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="81"/>
         <source>Ukrainian</source>
-        <translation>Украинский</translation>
+        <translation>Українська</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="82"/>
         <source>Serbian</source>
-        <translation>Сербский</translation>
+        <translation>Сербська</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="83"/>
         <source>Croatian</source>
-        <translation>Хорватский</translation>
+        <translation>Хорватська</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="84"/>
         <source>Polish</source>
-        <translation>Польский</translation>
+        <translation>Польська</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="85"/>
         <source>Danish</source>
-        <translation>Датский</translation>
+        <translation>Дацька</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="86"/>
         <source>Portuguese</source>
-        <translation>Португальский</translation>
+        <translation>Португальська</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="87"/>
         <source>Dutch</source>
-        <translation>Голландский</translation>
+        <translation>Голандська</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="88"/>
         <source>Czech</source>
-        <translation>Чешский</translation>
+        <translation>Чеська</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="89"/>
         <source>Romanian</source>
-        <translation>Румынский</translation>
+        <translation>Руминська</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="90"/>
         <source>Hungarian</source>
-        <translation>Венгерский</translation>
+        <translation>Угорська</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="91"/>
         <source>Bulgarian</source>
-        <translation>Болгарский</translation>
+        <translation>Болгарська</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="92"/>
         <source>Slovenian</source>
-        <translation>Словенский</translation>
+        <translation>Словенська</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="93"/>
         <source>Latvian</source>
-        <translation>Латвийский</translation>
+        <translation>Латвійська</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="94"/>
         <source>Lithuanian</source>
-        <translation>Литовский</translation>
+        <translation>Литовська</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="95"/>
         <source>Estonian</source>
-        <translation>Эстонский</translation>
+        <translation>Естонська</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="96"/>
         <source>Turkish</source>
-        <translation>Турецкий</translation>
+        <translation>Турецька</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="109"/>
@@ -432,12 +432,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../settings.cpp" line="117"/>
         <source>Plain text with TeX paragraphs</source>
-        <translation>Обычный текст с абзацами TeX</translation>
+        <translation>Звичайний текст з абзацами TeX</translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="118"/>
         <source>Plain text</source>
-        <translation>Обычный текст</translation>
+        <translation>Звичайний текст</translation>
     </message>
 </context>
 <context>
@@ -445,17 +445,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../settings.ui" line="13"/>
         <source>Settings</source>
-        <translation>Параметры</translation>
+        <translation>Параметри</translation>
     </message>
     <message>
         <location filename="../settings.ui" line="26"/>
         <source>Common settings</source>
-        <translation>Общие параметры</translation>
+        <translation>Загальні параметри</translation>
     </message>
     <message>
         <location filename="../settings.ui" line="44"/>
         <source>&amp;Language:</source>
-        <translation>&amp;Язык:</translation>
+        <translation>&amp;Мова:</translation>
     </message>
     <message>
         <location filename="../settings.ui" line="70"/>
@@ -465,12 +465,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../settings.ui" line="93"/>
         <source>Cuneiform location</source>
-        <translation>Расположение Cuneiform</translation>
+        <translation>Місцезнаходження Cuneiform</translation>
     </message>
     <message>
         <location filename="../settings.ui" line="111"/>
         <source>&amp;Program:</source>
-        <translation>&amp;Программа:</translation>
+        <translation>&amp;Програма:</translation>
     </message>
 </context>
 </TS>
