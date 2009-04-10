@@ -30,7 +30,6 @@ int main( int argc, char *argv[] ) {
 
 	// Set application details
 	app.setApplicationName( "cuneiform-qt" );
-	app.setApplicationVersion( "0.1.1" );
 	app.setOrganizationDomain( "http://www.altlinux.org/Cuneiform-Qt" );
 
 	// Load localization
@@ -44,7 +43,7 @@ int main( int argc, char *argv[] ) {
 	// Show help
 	if( app.arguments().contains( "--help" ) || app.arguments().contains( "-h" ) ) {
 		std::cout << qPrintable( QObject::tr( "%1 %2. Graphical interface for Cuneiform OCR system.", 
-			"%1 is application name, %2 is application version").arg( app.applicationName() ).arg( app.applicationVersion() ) ) << std::endl;
+			"%1 is application name, %2 is application version").arg( app.applicationName() ).arg( QString( VERSION ) ) ) << std::endl;
 		std::cout << qPrintable( QObject::tr( "Usage: %1 [option] [image]", 
 			"%1 is application name" ).arg( app.applicationName() ) )<< std::endl << std::endl;
 		std::cout << qPrintable( QObject::tr( "Available options:" ) ) << std::endl;
@@ -58,7 +57,7 @@ int main( int argc, char *argv[] ) {
 	// TODO Print Cuneiform version
 	if( app.arguments().contains( "--version" ) ) {
 		std::cout << qPrintable( QObject::tr( "%1 %2", 
-			"%1 is application name, %2 is application version").arg( app.applicationName() ).arg( app.applicationVersion() ) ) << std::endl;
+			"%1 is application name, %2 is application version").arg( app.applicationName() ).arg( QString( VERSION ) ) ) << std::endl;
 		exit( 0 );
 	}
 	
