@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="uk">
-<defaultcodec></defaultcodec>
 <context>
     <name>MainWindow</name>
     <message>
@@ -255,39 +254,39 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="47"/>
+        <location filename="../main.cpp" line="46"/>
         <source>%1 %2. Graphical interface for Cuneiform OCR system.</source>
         <comment>%1 is application name, %2 is application version</comment>
         <translation>%1 %2. Графічний інтерфейс для системи розпізнавання символів Cuneiform.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="49"/>
+        <location filename="../main.cpp" line="48"/>
         <source>Usage: %1 [option] [image]</source>
         <comment>%1 is application name</comment>
         <translation>Використання: %1 [параметр] [зображення]</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="50"/>
+        <location filename="../main.cpp" line="49"/>
         <source>Available options:</source>
         <translation>Доступні параметри::</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="51"/>
+        <location filename="../main.cpp" line="50"/>
         <source>    -h         This help</source>
         <translation>    -h         Довідка по використанню програми</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="52"/>
+        <location filename="../main.cpp" line="51"/>
         <source>    --version  Version information</source>
         <translation>    --version  Інформація про версію програми</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="53"/>
+        <location filename="../main.cpp" line="52"/>
         <source>    image      Image file in format supported by ImageMagic</source>
         <translation>    зображення      Файл зображення, формат якого підтримується в ImageMagic</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="61"/>
+        <location filename="../main.cpp" line="60"/>
         <source>%1 %2</source>
         <comment>%1 is application name, %2 is application version</comment>
         <translation>%1 %2</translation>

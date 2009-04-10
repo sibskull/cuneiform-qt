@@ -254,39 +254,39 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="47"/>
+        <location filename="../main.cpp" line="46"/>
         <source>%1 %2. Graphical interface for Cuneiform OCR system.</source>
         <comment>%1 is application name, %2 is application version</comment>
         <translation>%1 %2. Графический интерфейс для системы оптического распознавания символов Cuneiform.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="49"/>
+        <location filename="../main.cpp" line="48"/>
         <source>Usage: %1 [option] [image]</source>
         <comment>%1 is application name</comment>
         <translation>Использование: %1 [параметр] [изображение]</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="50"/>
+        <location filename="../main.cpp" line="49"/>
         <source>Available options:</source>
         <translation>Доступные параметры:</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="51"/>
+        <location filename="../main.cpp" line="50"/>
         <source>    -h         This help</source>
         <translation>    -h         Справка по использованию программы</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="52"/>
+        <location filename="../main.cpp" line="51"/>
         <source>    --version  Version information</source>
         <translation>    --version  Сведения о версии программы</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="53"/>
+        <location filename="../main.cpp" line="52"/>
         <source>    image      Image file in format supported by ImageMagic</source>
         <translation>    изображение      Файл изображения, формат которого поддерживается в ImageMagic</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="61"/>
+        <location filename="../main.cpp" line="60"/>
         <source>%1 %2</source>
         <comment>%1 is application name, %2 is application version</comment>
         <translation>%1 %2</translation>
