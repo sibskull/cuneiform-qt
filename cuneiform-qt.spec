@@ -1,6 +1,6 @@
 Name:		cuneiform-qt
 Version:	0.1.1
-Release:	alt1.1
+Release:	alt1.2
 Summary:	GUI frontend for Cuneiform OCR
 
 License:	GPLv3+
@@ -47,6 +47,10 @@ convert -resize 16x16 icons/%name.png %buildroot%_miconsdir/%name.png
 %_liconsdir/%name.png
 
 %changelog
+* Fri Apr 10 2009 Motsyo Gennadi <drool@altlinux.ru> 0.1.1-alt1.2
+- created Ukrainian translation
+- add Ukrainian to desktop-file
+
 * Wed Apr 08 2009 Motsyo Gennadi <drool@altlinux.ru> 0.1.1-alt1.1
 - fix optflags
 - change icons from pixmapsdir to iconsdir
