@@ -74,6 +74,9 @@ private:
 	
 	// Scene for display image
 	QGraphicsScene scene;
+	
+	// Displayed pixmap in scene
+	QGraphicsPixmapItem *picItem;
 
 };
 
