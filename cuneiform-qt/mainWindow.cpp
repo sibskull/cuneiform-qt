@@ -300,12 +300,13 @@ void MainWindow::onProcessStart() {
 		return;
 	}
 
-	form->statusBar->showMessage( tr("Recognition is processing...") );
 	if( ! process->onStart() ) {
 		QMessageBox::critical( this, tr("Error start"), 
 			tr("Could not start Cuneiform executables. Check your installation.") );
+		return;
 	}
 
+	form->statusBar->showMessage( tr("Recognition is processing...") );
 	form->result->clear();
 	progressDialog->exec();
 	
