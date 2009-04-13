@@ -1,0 +1,6 @@
+Makefile
+*.o
+cuneiform-qt
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
