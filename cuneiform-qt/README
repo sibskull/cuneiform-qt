@@ -24,7 +24,7 @@ All planned feature is in TODO file.
 
 REQUIRES
 --------
-- Qt >= 4.3 (http://www.trolltech.com)
+- Qt >= 4.4 (http://www.trolltech.com)
 - cuneiform (https://launchpad.net/cuneiform-linux)
 
 
