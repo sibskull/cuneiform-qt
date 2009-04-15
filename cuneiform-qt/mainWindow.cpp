@@ -48,6 +48,7 @@ MainWindow::MainWindow( QStringList *names )
 
 	// Set scene
 	form->source->setScene( &scene );
+	page = NULL;
 
 	// Set up process
 	process = new Backend( config );
@@ -121,10 +122,8 @@ void MainWindow::onWindowClose() {
 void MainWindow::OpenImage() {
 
 	// Open standart open dialog
-	QFileDialog dialog( this );
+	QFileDialog dialog( this, tr("Open image"), QString(),  tr("Images (*.png *.jpg *.jpeg *.bmp *.tif *.tiff)") + QString( ";;" ) + tr("All files (*)") );
 
-	dialog.setNameFilter( tr("Images (*.png *.jpg *.jpeg *.bmp *.tif *.tiff)") + QString( ";;" ) + tr("All files (*)") );
-	dialog.setWindowTitle( tr("Open image") );
 	dialog.setAcceptMode( QFileDialog::AcceptOpen );
 	
 	QStringList fileNames;
@@ -159,7 +158,6 @@ void MainWindow::SaveText() {
 
 	// Open standart save dialog
 	QString savedFile( "" );
-	QFileDialog dialog( this );
 	
 	// Different extensions for different formats
 	QString defExt;
@@ -178,9 +176,8 @@ void MainWindow::SaveText() {
 		}
 	}
 
-	dialog.setNameFilter( defFilter + QString( ";;" ) + tr("All files (*)") );
+	QFileDialog dialog( this, tr("Save result"), QString(), defFilter + QString( ";;" ) + tr("All files (*)") );
 	dialog.setDefaultSuffix( defExt );
-	dialog.setWindowTitle( tr("Save result") );
 	dialog.setAcceptMode( QFileDialog::AcceptSave );
 	dialog.setConfirmOverwrite( false );
 	
@@ -259,11 +256,13 @@ void MainWindow::SaveText() {
 // Render specified image
 void MainWindow::renderImage() {
 	QPixmap img;
-	QGraphicsPixmapItem *page;
 	
-	//qDebug() << "Load image" << qPrintable( sourceImageFile );
-	scene.clear();
-	
+	// Workaround for Qt 4.3
+	if( page ) {
+		scene.removeItem( (QGraphicsItem *)page );
+		delete page;
+	}
+
 	// Load image
 	form->statusBar->showMessage( tr("Loading image '%1'...").arg( sourceImageFile) );
 	if( ! img.load( sourceImageFile ) ) {
@@ -275,8 +274,8 @@ void MainWindow::renderImage() {
 	}
 	
 	page = scene.addPixmap( img );
-	//page = scene.addPixmap( QPixmap("icons/tool-open.png") );
 	page->setOffset( 5, 5 );
+	scene.setSceneRect( 0, 0, (qreal)(img.width()+10), (qreal)(img.height()+10) );
 
 	// Show image
 	form->source->show();
