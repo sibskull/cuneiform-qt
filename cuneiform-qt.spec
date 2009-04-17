@@ -1,6 +1,6 @@
 Name:		cuneiform-qt
 Version:	0.1.2
-Release:	alt0.M40.1
+Release:	alt0.M40.2
 Summary:	GUI frontend for Cuneiform OCR
 
 License:	GPLv3+
@@ -47,6 +47,9 @@ convert -resize 16x16 icons/%name.png %buildroot%_miconsdir/%name.png
 %_liconsdir/%name.png
 
 %changelog
+* Fri Apr 17 2009 Andrey Cherepanov <cas@altlinux.org> 0.1.2-alt0.M40.2
+- Disable move and close for dock panes 
+
 * Fri Apr 10 2009 Andrey Cherepanov <cas@altlinux.org> 0.1.2-alt0.M40.1
 - Build for 4.0 branch
 
