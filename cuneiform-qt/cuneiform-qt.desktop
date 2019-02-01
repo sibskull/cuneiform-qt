@@ -4,12 +4,11 @@ GenericName=Cuneiform OCR
 GenericName[ru]=Распознавание текстов
 GenericName[uk]=Розпізнавання текстів
 Exec=cuneiform-qt %u
-Comment=Cuneiform OCR
-Comment[ru]=Распознавание текстов
-Comment[uk]=Розпізнавання текстів
+Comment=Graphical interface for Cuneiform OCR system
+Comment[ru]=Графический интерфейс для системы распознавания Cuneiform
+Comment[uk]=Графічний інтерфейс для системи розпізнавання символів Cuneiform
 MimeType=image/png;image/jpeg;image/tiff;image/bmp;
 Type=Application
-Icon=cuneiform-qt.png
-ServiceTypes=
+Icon=cuneiform-qt
 Categories=Office;
 
