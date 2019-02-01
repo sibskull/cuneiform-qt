@@ -153,9 +153,7 @@ void MainWindow::RecognizeText() {
 
 // Save recognized text
 void MainWindow::SaveText() {
-	
-	int save = true;
-	int ret;
+	int ret=0;
 
 	form->statusBar->showMessage( tr("Saving result file...") );
 
@@ -208,10 +206,9 @@ void MainWindow::SaveText() {
 							  tr("File with name '%1' is exist.\n"
 							  "Do you really overwrite this file?").arg( f.fileName() ), 
 							  QMessageBox::Yes | QMessageBox::No );
-		if( ret != QMessageBox::Yes ) 
-			save = false;
-		else
+		if( ret == QMessageBox::Yes ) {
 			f.remove();
+                }
 	}
 	
 	// Really save to specified file
