@@ -41,7 +41,7 @@ convert -resize 32x32 icons/%name.png %buildroot%_niconsdir/%name.png
 convert -resize 16x16 icons/%name.png %buildroot%_miconsdir/%name.png
 
 %files
-%doc AUTHORS README TODO
+%doc AUTHORS README.md TODO.md
 %_bindir/%name
 %_datadir/apps/%name/*.qm
 %_desktopdir/%name.desktop
