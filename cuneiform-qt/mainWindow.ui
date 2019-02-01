@@ -29,7 +29,7 @@
         <string>Source image</string>
        </property>
        <property name="features" >
-        <set>QDockWidget::DockWidgetClosable|QDockWidget::DockWidgetMovable</set>
+        <set>QDockWidget::DockWidgetMovable</set>
        </property>
        <property name="windowTitle" >
         <string>Source Image</string>
@@ -57,7 +57,7 @@
       </widget>
       <widget class="QDockWidget" name="textWidget" >
        <property name="features" >
-        <set>QDockWidget::DockWidgetClosable|QDockWidget::DockWidgetMovable</set>
+        <set>QDockWidget::DockWidgetMovable</set>
        </property>
        <property name="windowTitle" >
         <string>Recognized text</string>
