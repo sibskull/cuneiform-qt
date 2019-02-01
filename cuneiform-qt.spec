@@ -9,7 +9,7 @@ URL:		http://www.altlinux.org/Cuneiform-Qt
 
 Packager:	Andrey Cherepanov <cas@altlinux.org>
 
-Source0:	%name-%version.tar.bz2
+Source0:	%name-%version.tar
 
 BuildRequires: ImageMagick gcc-c++ libqt4-devel >= 4.3.0
 
