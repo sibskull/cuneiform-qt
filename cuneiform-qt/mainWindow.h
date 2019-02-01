@@ -23,6 +23,7 @@
 #include "ui_mainWindow.h"
 #include "settings.h"
 #include "backend.h"
+#include <QMessageBox>
 
 class MainWindow : public QMainWindow
 {

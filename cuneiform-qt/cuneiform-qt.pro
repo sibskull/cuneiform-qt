@@ -5,6 +5,10 @@ TEMPLATE = app
 TARGET = cuneiform-qt
 VERSION = 0.1.1
 
+greaterThan(QT_MAJOR_VERSION, 4) {
+    QT += widgets
+}
+
 SOURCES += backend.cpp \
 		   main.cpp \
            mainWindow.cpp \

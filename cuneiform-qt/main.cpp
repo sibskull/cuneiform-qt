@@ -20,6 +20,7 @@
 #include <QtGui>
 #include <iostream>
 #include "mainWindow.h"
+#include <QMessageBox>
 
 int main( int argc, char *argv[] ) {
 

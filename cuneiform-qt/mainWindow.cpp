@@ -18,6 +18,8 @@
  ***************************************************************************/
 
 #include "mainWindow.h"
+#include <QFileDialog>
+#include <QGraphicsPixmapItem>
 
 MainWindow::MainWindow( QStringList *names )
 	: QMainWindow( 0, 0 )
@@ -59,21 +61,21 @@ MainWindow::MainWindow( QStringList *names )
 	// TODO Disable action if image is not loaded
 	
 	// Open image
-	connect( form->actionOpen, SIGNAL(activated(int)), this, SLOT(OpenImage()) ); 
+	connect( form->actionOpen, SIGNAL(triggered()), this, SLOT(OpenImage()) );
 	// Recognize text
-	connect( form->actionRecognizeText, SIGNAL(activated(int)), this, SLOT(RecognizeText()) ); 
+	connect( form->actionRecognizeText, SIGNAL(triggered()), this, SLOT(RecognizeText()) );
 	// Save result text
-	connect( form->actionSave, SIGNAL(activated(int)), this, SLOT(SaveText()) ); 
+	connect( form->actionSave, SIGNAL(triggered()), this, SLOT(SaveText()) );
 	// Exit. TODO confirm exit without saving recognized text
-	connect( form->actionExit, SIGNAL(activated(int)), this, SLOT(onWindowClose()) ); 
+	connect( form->actionExit, SIGNAL(triggered()), this, SLOT(onWindowClose()) );
 
 	// Open configuration dialog
-	connect( form->actionConfigure, SIGNAL(activated(int)), config, SLOT(exec()) ); 
+	connect( form->actionConfigure, SIGNAL(triggered()), config, SLOT(exec()) );
     connect( config, SIGNAL(accepted()), this, SLOT(onSettingsSave()) );
     connect( config, SIGNAL(rejected()), this, SLOT(onSettingsCancel()) );
 
 	// About dialog
-	connect( form->actionAbout, SIGNAL(activated(int)), this, SLOT(About()) );
+	connect( form->actionAbout, SIGNAL(triggered()), this, SLOT(About()) );
 	
 	// On window close
 	connect( this, SIGNAL(destroyed()), this, SLOT(onWindowClose()) );
