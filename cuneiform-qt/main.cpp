@@ -38,6 +38,10 @@ int main( int argc, char *argv[] ) {
 	QString locale = QLocale::system().name().left( 2 );
 	translator.load( QString( DATADIR ) + app.applicationName() + QString ( "_" ) + locale );
     app.installTranslator( &translator );
+
+        QTranslator qtTranslator;
+        qtTranslator.load("qt_" + QLocale::system().name(), QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+        app.installTranslator(&qtTranslator);
 	 
 	// Process command line arguments
 	
