@@ -10,31 +10,27 @@ greaterThan(QT_MAJOR_VERSION, 4) {
 }
 
 SOURCES += backend.cpp \
-		   main.cpp \
+           main.cpp \
            mainWindow.cpp \
-		   settings.cpp
+           settings.cpp
 
 HEADERS += backend.h \
-		   mainWindow.h \
-		   settings.h
+           mainWindow.h \
+           settings.h
 
 CONFIG += debug
 
 CONFIG += release \
-		  exceptions \
-		  qt \
-		  warn_on
+          exceptions \
+          qt \
+          warn_on
 
 RESOURCES = mainWindow.qrc
 
 FORMS += mainWindow.ui \
-		 settings.ui
+         settings.ui
 
 PREFIX = /usr
-
-isEmpty( PREFIX ) {
-PREFIX = /usr/local
-}
 
 DATADIR = $$PREFIX/share/apps/cuneiform-qt/
 TRANSLATIONS_DIR = $$DATADIR
@@ -52,5 +48,5 @@ desktop.files = cuneiform-qt.desktop
 desktop.path = $$PREFIX/share/applications/
 
 INSTALLS += target \
-			icon \
-			desktop
+            icon \
+            desktop
