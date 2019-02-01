@@ -1,8 +1,6 @@
-Cuneiform-Qt is a graphical interface for Cuneiform OCR
-=======================================================
+Cuneiform-Qt
+============
 Andrey Cherepanov <sibskull@gmail.com>
-
-Version 0.1.2
 
 This application is GUI frontend for Cuneiform (OCR system originally 
 developed and open sourced by Cognitive technologies). It allow
@@ -32,7 +30,7 @@ the Free Software Foundation; either version 3 of the License, or
 
 Author and contacts
 -------------------
-Copyright (c) 2009,2019 by Andrey Cherepanov <sibskull@gmail.com>
+Copyright &copy; 2009,2019 by Andrey Cherepanov <sibskull@gmail.com>
 
 * Project URL: https://github.com/sibskull/cuneiform-qt
 * Project page on Russian: http://www.altlinux.org/Cuneiform-Qt
