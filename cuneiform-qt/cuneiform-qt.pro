@@ -26,7 +26,7 @@ RESOURCES = mainWindow.qrc
 FORMS += mainWindow.ui \
 		 settings.ui
 
-PREFIX = $$(PREFIX)
+PREFIX = /usr
 
 isEmpty( PREFIX ) {
 PREFIX = /usr/local
