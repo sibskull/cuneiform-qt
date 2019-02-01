@@ -3,7 +3,7 @@
 
 TEMPLATE = app
 TARGET = cuneiform-qt
-VERSION = 0.1.1
+VERSION = 0.1.2
 
 greaterThan(QT_MAJOR_VERSION, 4) {
     QT += widgets
