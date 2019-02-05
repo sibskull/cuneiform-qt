@@ -153,7 +153,7 @@ void MainWindow::RecognizeText() {
 
 // Save recognized text
 void MainWindow::SaveText() {
-	int ret=0;
+	int ret=1;
 
 	form->statusBar->showMessage( tr("Saving result file...") );
 
@@ -208,6 +208,9 @@ void MainWindow::SaveText() {
 							  QMessageBox::Yes | QMessageBox::No );
 		if( ret == QMessageBox::Yes ) {
 			f.remove();
+                } else {
+                        form->statusBar->showMessage( QString( "" ) );
+                        ret = 0;
                 }
 	}
 	
@@ -249,9 +252,8 @@ void MainWindow::SaveText() {
 			return;
 		}
 		f.close();
+                form->statusBar->showMessage( tr("File '%1' is saved successful.").arg( f.fileName() ) );
 	}
-
-	form->statusBar->showMessage( tr("File '%1' is saved successful.").arg( f.fileName() ) );
 
 }
 
