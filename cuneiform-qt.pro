@@ -18,9 +18,9 @@ HEADERS += backend.h \
            mainWindow.h \
            settings.h
 
-CONFIG += debug
+QMAKE_STRIP = echo
 
-CONFIG += release \
+CONFIG += build_all \
           exceptions \
           qt \
           warn_on
